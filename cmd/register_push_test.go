@@ -3,10 +3,11 @@ package cmd
 import (
 	"bytes"
 	"context"
-	"github.com/k-yomo/pubsub_cli/pkg"
-	"github.com/spf13/cobra"
 	"testing"
 	"time"
+
+	"github.com/ndkav4/pubsub_cli/pkg"
+	"github.com/spf13/cobra"
 )
 
 func Test_registerPush(t *testing.T) {

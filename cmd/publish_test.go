@@ -2,13 +2,14 @@ package cmd
 
 import (
 	"bytes"
-	"cloud.google.com/go/pubsub"
 	"context"
-	"github.com/google/go-cmp/cmp"
-	"github.com/k-yomo/pubsub_cli/pkg"
-	"github.com/spf13/cobra"
 	"sync"
 	"testing"
+
+	"cloud.google.com/go/pubsub"
+	"github.com/google/go-cmp/cmp"
+	"github.com/ndkav4/pubsub_cli/pkg"
+	"github.com/spf13/cobra"
 )
 
 func Test_publish(t *testing.T) {
@@ -24,12 +25,12 @@ func Test_publish(t *testing.T) {
 		args    []string
 	}
 	tests := []struct {
-		name     string
-		args     args
-		before   func() *pubsub.Subscription
-		wantData string
+		name           string
+		args           args
+		before         func() *pubsub.Subscription
+		wantData       string
 		wantAttributes map[string]string
-		wantErr  bool
+		wantErr        bool
 	}{
 		{
 			name: "message is expected to be published successfully",

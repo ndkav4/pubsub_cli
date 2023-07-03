@@ -1,8 +1,6 @@
-module github.com/k-yomo/pubsub_cli
+module github.com/ndkav4/pubsub_cli
 
 go 1.19
-
-replace github.com/k-yomo/pubsub_cli => ./
 
 require (
 	cloud.google.com/go/pubsub v1.30.0

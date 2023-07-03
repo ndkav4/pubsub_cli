@@ -4,9 +4,10 @@ import (
 	"bytes"
 	"context"
 	"fmt"
-	"github.com/k-yomo/pubsub_cli/pkg"
-	"github.com/spf13/cobra"
 	"testing"
+
+	"github.com/ndkav4/pubsub_cli/pkg"
+	"github.com/spf13/cobra"
 )
 
 func Test_createSubscription(t *testing.T) {
@@ -24,16 +25,16 @@ func Test_createSubscription(t *testing.T) {
 		args    []string
 	}
 	tests := []struct {
-		name               string
-		args               args
-		check              func()
-		wantErr            bool
+		name    string
+		args    args
+		check   func()
+		wantErr bool
 	}{
 		{
-			name:               "subscription is created successfully",
-			args:               args{
+			name: "subscription is created successfully",
+			args: args{
 				rootCmd: newTestRootCmd(t),
-				args: []string{"create_subscription", "create_subscription_topic", subscriptionID, fmt.Sprintf("--%s", createTopicIfNotExistFlagName)},
+				args:    []string{"create_subscription", "create_subscription_topic", subscriptionID, fmt.Sprintf("--%s", createTopicIfNotExistFlagName)},
 			},
 			check: func() {
 				sub := pubsubClient.Subscription(subscriptionID)

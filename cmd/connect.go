@@ -1,16 +1,17 @@
 package cmd
 
 import (
-	"cloud.google.com/go/pubsub"
 	"context"
 	"fmt"
-	"github.com/k-yomo/pubsub_cli/pkg"
-	"github.com/mitchellh/colorstring"
-	"github.com/pkg/errors"
-	"golang.org/x/sync/errgroup"
 	"io"
 	"os"
 	"sort"
+
+	"cloud.google.com/go/pubsub"
+	"github.com/mitchellh/colorstring"
+	"github.com/ndkav4/pubsub_cli/pkg"
+	"github.com/pkg/errors"
+	"golang.org/x/sync/errgroup"
 
 	"github.com/spf13/cobra"
 )

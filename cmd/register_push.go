@@ -1,16 +1,17 @@
 package cmd
 
 import (
-	"cloud.google.com/go/pubsub"
 	"context"
-	"github.com/k-yomo/pubsub_cli/pkg"
-	"github.com/mitchellh/colorstring"
-	"github.com/pkg/errors"
-	"github.com/spf13/cobra"
 	"io"
 	"os"
 	"strconv"
 	"time"
+
+	"cloud.google.com/go/pubsub"
+	"github.com/mitchellh/colorstring"
+	"github.com/ndkav4/pubsub_cli/pkg"
+	"github.com/pkg/errors"
+	"github.com/spf13/cobra"
 )
 
 // newRegisterPushCmd returns the command to register an endpoint for subscribing
@@ -63,7 +64,7 @@ func registerPush(ctx context.Context, out io.Writer, pubsubClient *pkg.PubSubCl
 	_, _ = colorstring.Fprintf(out, "[start] registering push endpoint for %s...\n", topic.String())
 	subscriptionConfig := pubsub.SubscriptionConfig{
 		Topic:            topic,
-		AckDeadline: ackDeadline,
+		AckDeadline:      ackDeadline,
 		ExpirationPolicy: 24 * time.Hour,
 		PushConfig: pubsub.PushConfig{
 			Endpoint:             endpoint,

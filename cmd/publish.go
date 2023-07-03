@@ -1,15 +1,16 @@
 package cmd
 
 import (
-	"cloud.google.com/go/pubsub"
 	"context"
 	"fmt"
-	"github.com/k-yomo/pubsub_cli/pkg"
-	"github.com/mitchellh/colorstring"
-	"github.com/pkg/errors"
-	"github.com/spf13/cobra"
 	"io"
 	"strings"
+
+	"cloud.google.com/go/pubsub"
+	"github.com/mitchellh/colorstring"
+	"github.com/ndkav4/pubsub_cli/pkg"
+	"github.com/pkg/errors"
+	"github.com/spf13/cobra"
 )
 
 const attributeFlagName = "attribute"

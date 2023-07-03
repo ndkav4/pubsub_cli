@@ -1,23 +1,24 @@
 package cmd
 
 import (
-	"cloud.google.com/go/pubsub"
 	"context"
 	"fmt"
-	"github.com/k-yomo/pubsub_cli/pkg"
-	"github.com/mitchellh/colorstring"
-	"github.com/pkg/errors"
-	"github.com/spf13/cobra"
-	"golang.org/x/sync/errgroup"
 	"io"
 	"os"
 	"strconv"
 	"time"
+
+	"cloud.google.com/go/pubsub"
+	"github.com/mitchellh/colorstring"
+	"github.com/ndkav4/pubsub_cli/pkg"
+	"github.com/pkg/errors"
+	"github.com/spf13/cobra"
+	"golang.org/x/sync/errgroup"
 )
 
 // newSubscribeCmd returns the command to subscribe messages
 func newSubscribeCmd(out io.Writer) *cobra.Command {
-	command :=  &cobra.Command{
+	command := &cobra.Command{
 		Use:     "subscribe TOPIC_ID ...",
 		Short:   "subscribe Pub/Sub topics",
 		Long:    "create temporary subscriptions for given Pub/Sub topics(or you can set 'all' to subscribe all topics) and subscribe the topics",
@@ -109,7 +110,7 @@ func subscribe(ctx context.Context, out io.Writer, pubsubClient *pkg.PubSubClien
 				return errors.Wrapf(err, "create unique subscription to %s", topic.String())
 			}
 			subscribers <- &subscriber{topic: topic, sub: sub}
-			_, _ = colorstring.Fprintf(out, "[green][success] created subscription '%s' to %s\n",  sub.ID(), topic.String())
+			_, _ = colorstring.Fprintf(out, "[green][success] created subscription '%s' to %s\n", sub.ID(), topic.String())
 			return nil
 		})
 	}

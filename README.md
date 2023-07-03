@@ -1,6 +1,6 @@
 # pubsub_cli
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
-![Main Workflow](https://github.com/k-yomo/pubsub_cli/workflows/Test/badge.svg)
+![Main Workflow](https://github.com/ndkav4/pubsub_cli/workflows/Test/badge.svg)
 [![codecov](https://codecov.io/gh/k-yomo/pubsub_cli/branch/master/graph/badge.svg)](https://codecov.io/gh/k-yomo/pubsub_cli)
 [![Go Report Card](https://goreportcard.com/badge/k-yomo/pubsub_cli)](https://goreportcard.com/report/k-yomo/pubsub_cli)
 
@@ -16,7 +16,7 @@ $ brew install pubsub_cli
 
 #### Go 
 ```
-$ go install github.com/k-yomo/pubsub_cli
+$ go install github.com/ndkav4/pubsub_cli
 ```
 
 ### Pub/Sub Emulator

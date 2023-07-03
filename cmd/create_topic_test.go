@@ -4,9 +4,10 @@ import (
 	"bytes"
 	"context"
 	"fmt"
-	"github.com/k-yomo/pubsub_cli/pkg"
-	"github.com/spf13/cobra"
 	"testing"
+
+	"github.com/ndkav4/pubsub_cli/pkg"
+	"github.com/spf13/cobra"
 )
 
 func Test_createTopic(t *testing.T) {
@@ -25,16 +26,16 @@ func Test_createTopic(t *testing.T) {
 		args    []string
 	}
 	tests := []struct {
-		name               string
-		args               args
-		check              func()
-		wantErr            bool
+		name    string
+		args    args
+		check   func()
+		wantErr bool
 	}{
 		{
-			name:               "topic is created successfully",
-			args:               args{
+			name: "topic is created successfully",
+			args: args{
 				rootCmd: newTestRootCmd(t),
-				args: []string{"create_topic", topicID1, topicID2},
+				args:    []string{"create_topic", topicID1, topicID2},
 			},
 			check: func() {
 				if _, err := pubsubClient.FindTopic(context.Background(), topicID1); err != nil {
@@ -46,10 +47,10 @@ func Test_createTopic(t *testing.T) {
 			},
 		},
 		{
-			name:               "skip existing topic",
-			args:               args{
+			name: "skip existing topic",
+			args: args{
 				rootCmd: newTestRootCmd(t),
-				args: []string{"create_topic", topicID1, topicID1},
+				args:    []string{"create_topic", topicID1, topicID1},
 			},
 			check: func() {},
 		},
