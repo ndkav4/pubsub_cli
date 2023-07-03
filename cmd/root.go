@@ -18,7 +18,7 @@ var version string
 
 // Exec executes command
 func Exec() {
-	rootCmd := newRootCmd(os.Stdin)
+	rootCmd := newRootCmd(os.Stdout)
 	if err := rootCmd.Execute(); err != nil {
 		_, _ = colorstring.Printf("[red][error] %v\n", err)
 		os.Exit(1)

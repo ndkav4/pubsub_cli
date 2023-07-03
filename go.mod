@@ -2,6 +2,8 @@ module github.com/k-yomo/pubsub_cli
 
 go 1.19
 
+replace github.com/k-yomo/pubsub_cli => ./
+
 require (
 	cloud.google.com/go/pubsub v1.30.0
 	github.com/google/go-cmp v0.5.9
